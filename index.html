@@ -8,5 +8,14 @@
 <body>
     <h1>Sleeper API Data</h1>
     <div id="data"></div>
+
+    <script>
+        // Get the data passed from Flask
+        var data = {{ data|tojson|safe }};
+
+        // Display the data
+        var dataDiv = document.getElementById('data');
+        dataDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+    </script>
 </body>
 </html>
