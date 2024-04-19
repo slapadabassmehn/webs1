@@ -9,8 +9,8 @@ def index():
     response = requests.get('https://api.sleeper.app/v1/league/1048388540935016448/users')
     # Convert the response to JSON
     data = response.json()
-    # Return the JSON data
-    return jsonify(data)
+    # Pass the data to the template for rendering
+    return render_template('index.html', data=data)
 
 if __name__ == '__main__':
     app.run(debug=True)
